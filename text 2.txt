@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Run Once Example</title>
+</head>
+<body>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Check if the function has already run
+            if (!localStorage.getItem("hasRunOnce")) {
+                
+                // Call your function here
+                runMyTargetFunction();
+
+                // Mark the flag in localStorage so it won't run on next refresh
+                localStorage.setItem("hasRunOnce", "true");
+            }
+        });
+
+        function runMyTargetFunction() {
+            console.log("This function runs exactly once, even after a page refresh!");
+            alert("Welcome! This message appears only on your very first visit.");
+        }
+    </script>
+</body>
+</html>
